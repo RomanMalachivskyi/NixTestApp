@@ -59,7 +59,7 @@ public class Utils {
             return true;
         }
         if (person.isAlive() && (person.getLiveNeighbors() == 2 || person.getLiveNeighbors() == 3)) {
-            System.out.println("Person with number: " + person.getNumber() + " will be live");
+            System.out.println("Person with number: " + person.getNumber() + " will be alive");
             return false;
         }
         if (person.isAlive() && person.getLiveNeighbors() > 3) {
@@ -67,7 +67,7 @@ public class Utils {
             return true;
         }
         if (!person.isAlive() && person.getLiveNeighbors() == 3) {
-            System.out.println("Person with number: " + person.getNumber() + " will be alive");
+            System.out.println("Person with number: " + person.getNumber() + " will become alive");
             return false;
         }
         return true;
