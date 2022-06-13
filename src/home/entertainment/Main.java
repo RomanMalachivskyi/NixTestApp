@@ -13,7 +13,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Hello dear interviewers, lets play a Game of Life.");
-        System.out.println("Please enter a numbers of live persons, for random please use rnd:");
+        System.out.println("Please enter number of live persons, for random please use rnd:");
 
         String s = in.nextLine();
         int count;
@@ -22,7 +22,7 @@ public class Main {
         } else {
             count = Integer.parseInt(s);
         }
-        System.out.println("We will start game with a " + count + " live persons.");
+        System.out.println("We will start the game with " + count + " live persons.");
 
         int[][] gameGrid = new int [size][size];
         for (int i = 0; i < size; i++) {
@@ -69,7 +69,7 @@ public class Main {
             Map<String, Person> personMap = persons.stream().collect(Collectors.toMap(Person::getNumber, Function.identity()));
 
             long countOfDeads = persons.stream().filter(person -> person.getAliveAsInt() == 0).count();
-            System.out.println("How much russian orks was killed?");
+            System.out.println("How many russian orks were killed?");
             System.out.println(countOfDeads);
 
             for (int i = 0; i < size; i++) {
@@ -81,10 +81,10 @@ public class Main {
             System.out.println("Printing after generation data");
             Utils.printer(size, gameGrid);
 
-            System.out.println("For exit from game just enter 'exit', to continue just press enter...");
+            System.out.println("To exit the game just enter 'exit', to continue just press enter...");
             String command = in.nextLine();
             if (command.equals("exit") || countOfDeads == size * size) {
-                System.out.println("End of game, if everyone already or someone stopped the game!");
+                System.out.println("End of game, if everyone already dead or someone stopped the game!");
                 markedForGameInProgress = false;}
 
         }
